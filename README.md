@@ -1,3 +1,9 @@
+<h4>RUN FIRST</h4>
+<h5>php artisan migrate //to migrate all the table</h5><br>
+<h5>php artisan db:seed //to seed and insert all the barangay</h5><br>
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
