@@ -1,6 +1,6 @@
 <h4>RUN FIRST</h4>
 <h5>php artisan migrate //to migrate all the table</h5><br>
-<h5>php artisan db:seed //to seed and insert all the barangay</h5><br>
+<h5>php artisan db:seed //to seed and insert all the barangay</h5>
 
 
 
