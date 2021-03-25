@@ -1,0 +1,65 @@
+.glass{
+    background-color: white;
+    min-height: 60vh!important;
+    min-width: 25%!important;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+    );
+    backdrop-filter: blur(1rem);
+    position: fixed;
+    border-radius: 1rem;
+    z-index: 12;
+
+}
+
+.text-input{  
+    padding: 1.5rem;
+    padding-left: 3.8rem;
+    border-radius: 18px!important;
+    font-size: 1.2rem;
+}
+
+.fas{
+    font-size: 1.8rem;
+    position: absolute;
+    color: rgb(179, 179, 179);
+}
+.fa-envelope{
+    top: 8rem;
+    left: 5rem;
+}
+
+.fa-lock{
+    top: 12rem;
+    left: 5rem;
+}
+
+
+/* .text-input:focus{
+    border-color: rgb(0, 132, 255);
+} */
+
+/* .text-input i:focus {
+    color: rgb(0, 132, 255);
+} */
+
+.icon-input:target .text-input{
+    border-color: red;
+}
+.icon-input:target .fas{
+    color: red;
+}
+   
+
+@media screen and (max-width: 700px){
+
+    .glass{
+        position: fixed;
+        height: 100vh!important;
+        width: 100%!important;
+        border-radius: 0;
+    }
+
+}
