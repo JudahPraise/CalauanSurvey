@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Barangay;
+
 
 class SurveyController extends Controller
 {
@@ -24,7 +24,6 @@ class SurveyController extends Controller
      */
     public function index()
     {
-        $barangays = Barangay::all();
-        return view('survey.home', compact('barangays'));
+        return redirect()->route('survey.dashboard');
     }
 }

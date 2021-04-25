@@ -18,12 +18,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/orbitcss/css/orbit.min.css" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg" style="background: #12192C">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand text-white" href="#">
                     <img src="{{ asset('images/Calauan_Laguna.png') }}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                     Calauan Survey
                   </a>
@@ -42,23 +45,23 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             @if(Auth::user()->role == 'Administrator')
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">Dashboard<span class="sr-only">(current)</span></a>
+                                    <a class="nav-link text-white" href="#">Dashboard<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Forms</a>
+                                    <a class="nav-link text-white" href="#">Barangays</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Reports</a>
+                                    <a class="nav-link text-white" href="#">Reports</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -80,17 +83,17 @@
                                     </div>
                                 </li>
                             @elseif (Auth::user()->role == 'Surveyor')
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">Dashboard<span class="sr-only">(current)</span></a>
+                                <li class="nav-item {{ (request()->is('survey')) ? 'active' : '' }}">
+                                    <a class="nav-link text-white" href="{{ route('survey.dashboard') }}">Dashboard<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item {{ (request()->is('survey/barangays')) ? 'active' : '' }}">
+                                    <a class="nav-link text-white" href="{{ route('barangay.index') }}">Barangays</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Forms</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">History</a>
+                                    <a class="nav-link text-white" href="#">History</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -117,6 +120,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+
     </div>
 </body>
 </html>
