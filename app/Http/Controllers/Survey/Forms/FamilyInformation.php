@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Survey\Forms;
 
-use App\Http\Controllers\Controller;
+use App\Barangay;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class FamilyInformation extends Controller
 {
     public function index(){
-        return view('survey.forms.family-information');
+        
+        $barangays = Barangay::all();
+        return view('survey.forms.family-information', compact('barangays'));
     }
 }
