@@ -15,7 +15,7 @@ class CreateTblResidenceTable extends Migration
     {
         Schema::create('tbl_residence', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('unique_id')->unique();
+            $table->unsignedbigInteger('unique_id')->unique();
             $table->date('yearnow');
             $table->mediumText('image');
             $table->string('fname');
