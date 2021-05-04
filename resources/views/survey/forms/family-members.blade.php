@@ -1,5 +1,5 @@
 @extends('survey.home')
-
+{{-- //FIXME: Put Border --}}
 @section('survey-home')
 
     <div class="container">
