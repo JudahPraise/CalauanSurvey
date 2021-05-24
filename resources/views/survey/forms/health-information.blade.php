@@ -5,7 +5,7 @@
     <div class="container">
         @include('survey.forms._navigation')
         <div class="container-fluid h-100">
-            <h1 class="h1 mt-5">Form 3: Healt Information</h1>
+            <h1 class="h1 mt-5">Form 3: Health Information</h1>
             <form class="mt-4">
                 <div class="form-row">
                     <div class="col-md-6 mb-3">
@@ -63,9 +63,9 @@
                             <label for="ifYEs">If yes -> What Herbal Plants?</label>
                             <input type="text" class="form-control border" id="ifYEs" disabled required>
                         </div>
-                        
+
                         <a class="btn btn-success px-2 mr-2 ml-2 mt-2 align-self-center mb-2" id="add">Add More</a>
-   
+
                         <a class="btn btn-danger px-2 mt-2 mb-2 align-self-center" id="remove">Remove</a>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
 
             $(this).on("click", ".addMore", function(){
               var html = '<div class="form-row"><div class="col-md-8 mb-3"><input type="text" class="form-control" id="validationDefault02" required></div><a class="btn btn-success px-2 mr-2 ml-2 mb-3 addMore align-self-center" id="add">Add More</a><a class="btn btn-danger px-2 mb-3 align-self-center remove" id="remove">Remove</a></div>'
-            
+
               $('.inputs_div').append(html);
             });
 
@@ -166,13 +166,13 @@
             });
 
             $('#yes').click(function() {
-                if($('#yes').is(':checked')) { 
+                if($('#yes').is(':checked')) {
                     $( "#ifYEs" ).prop( "disabled", false );
                     $('#add').addClass("addMore");
                 }
             });
             $('#no').click(function() {
-                if($('#no').is(':checked')) { 
+                if($('#no').is(':checked')) {
                     $( "#ifYEs" ).prop( "disabled", true );
                     $('#add').removeClass("addMore");
                 }
